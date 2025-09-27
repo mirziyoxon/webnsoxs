@@ -12,7 +12,7 @@
       margin: 0;
       padding: 0;
       color: #fff;
-      background: linear-gradient(135deg, #b30000, #ff4d4d, #ff9966, #660000);
+      background: linear-gradient(135deg, #660000, #990000, #b30000, #330000);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
       background-attachment: fixed;
@@ -231,7 +231,7 @@
   <!-- PROMO MODAL -->
   <div id="promoModal">
     <span class="close">&times;</span>
-    <img src="ads/reklama0.jpg" alt="Promo Banner">
+    <img src="" alt="Promo Banner" id="promoImage">
   </div>
 
   <script>
@@ -241,10 +241,21 @@
     btn.textContent = hiddenText.classList.contains("show") ? "Yopish" : "Ko`proq o‘qish";
   }
 
-  // PROMO MODAL SCRIPT
+  // PROMO MODAL SCRIPT WITH RANDOM IMAGE
   window.addEventListener("load", () => {
     const modal = document.getElementById("promoModal");
     const closeBtn = modal.querySelector(".close");
+    const promoImage = document.getElementById("promoImage");
+
+    // List of images
+    const images = [
+      "ads/reklama0.jpg",
+      "ads/reklama1.jpg",
+      "ads/reklama2.jpg",
+      "ads/reklama3.jpg",
+      "ads/reklama4.jpg",
+      "ads/reklama5.jpg"
+    ];
 
     function closeBanner() {
       modal.classList.remove("show");
@@ -256,14 +267,18 @@
 
     const lastShown = localStorage.getItem("bannerShownTime");
     const now = Date.now();
-    const oneDay = 30 * 60 * 1000; // 4 soat
+    const oneDay = 30 * 60 * 1000; // 30 min cooldown
 
-    // Agar oxirgi ko‘rsatish 1 kundan oldin bo‘lgan bo‘lsa yoki mavjud bo‘lmasa
     if (!lastShown || now - lastShown > oneDay) {
+      // Pick random image
+      const randomIndex = Math.floor(Math.random() * images.length);
+      promoImage.src = images[randomIndex];
+
       modal.style.display = "flex";
-      setTimeout(() => modal.classList.add("show"), 50); // fade in
+      setTimeout(() => modal.classList.add("show"), 50);
     }
   });
-</script>
+  </script>
 
-
+</body>
+</html>
