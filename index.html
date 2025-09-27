@@ -256,7 +256,7 @@
 
     const lastShown = localStorage.getItem("bannerShownTime");
     const now = Date.now();
-    const oneDay = 4 * 60 * 60 * 1000; // 4 soat
+    const oneDay = 30 * 60 * 1000; // 4 soat
 
     // Agar oxirgi ko‘rsatish 1 kundan oldin bo‘lgan bo‘lsa yoki mavjud bo‘lmasa
     if (!lastShown || now - lastShown > oneDay) {
@@ -265,4 +265,5 @@
     }
   });
 </script>
+
 
