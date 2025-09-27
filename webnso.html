@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>NISO.UZ</title>
+  <style>
+    /* ===== GLOBAL ===== */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background: linear-gradient(135deg, #b30000, #ff4d4d, #ff9966, #660000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      background-attachment: fixed;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: rgba(0,0,0,0.3);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd6d6;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ===== ARTICLES ===== */
+    .article {
+      background: rgba(255, 255, 255, 0.95);
+      color: #222;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+
+    .hidden {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+
+    .show {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    button {
+      background: #b30000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #800000;
+      transform: scale(1.05);
+    }
+
+    /* ===== ABOUT & CONTACT ===== */
+    .about, .contact {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(255,255,255,0.9);
+      color: #111;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NISO.UZ</h1>
+    <nav>
+      <a href="#articles">Maqolalar</a>
+      <a href="#about">Biz haqimizda</a>
+      <a href="#contact">Aloqa</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Ayollar salomatligi uchun ochiq kutubxona</h2>
+    <p>
+      Menstruatsiya, gormonlar, homiladorlik va boshqa mavzular haqida ochiq va ishonchli ma’lumot.
+      Ayollar tanasi haqidagi bilimni hammaga yaqinlashtiramiz.
+    </p>
+  </section>
+
+  <section id="articles">
+    <div class="article">
+      <h2>Menstruatsiya haqida</h2>
+      <p>Menstruatsiya – bu ayol organizmida tabiiy ravishda yuz beradigan jarayon...</p>
+      <div class="hidden">
+        <p>
+          Menstruatsiya sikli o‘rtacha 28 kun davom etadi. Bu jarayon davomida
+          bachadon qavati yangilanadi va organizm yangi siklga tayyorlanadi.
+          U haqida ochiq gapirish ayollarga o‘z tanasini tushunishga yordam beradi.
+        </p>
+      </div>
+      <button onclick="toggleText(this)">Ko`proq o‘qish</button>
+    </div>
+
+    <div class="article">
+      <h2>Gormonal muvozanat</h2>
+      <p>Gormonlar tananing asosiy boshqaruvchilari hisoblanadi...</p>
+      <div class="hidden">
+        <p>
+          Gormonal muvozanat buzilganda uyqu, kayfiyat va salomatlikka
+          ta’sir qiladi. Uni to‘g‘ri tushunish va sog‘lom turmush tarzini
+          olib borish juda muhim.
+        </p>
+      </div>
+      <button onclick="toggleText(this)">Ko`proq o‘qish</button>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>Biz haqimizda</h2>
+    <p>
+      NISO.UZ – bu O‘zbekistondagi birinchi onlayn kutubxona bo‘lib, ayollar salomatligi
+      mavzularini ochiq va soddalashtirilgan tarzda tushuntirishni maqsad qiladi.
+      Biz ayollarni tanasi haqida ilmiy asoslangan, ishonchli va stigma’dan xoli
+      bilim bilan qurollantirishga ishonamiz.
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Aloqa</h2>
+    <p>Bizning Telegram kanalimiz: <a href="https://t.me/nisouzz" target="_blank">@nisouzz</a></p>
+    <p>Elektron pochta: info@niso.uz</p>
+  </section>
+
+  <footer>
+    © 2025 NISO.UZ – Ayollar uchun bilim va salomatlik kutubxonasi
+  </footer>
+
+  <script>
+    function toggleText(btn) {
+      const hiddenText = btn.previousElementSibling;
+      hiddenText.classList.toggle("show");
+      if (hiddenText.classList.contains("show")) {
+        btn.textContent = "Yopish";
+      } else {
+        btn.textContent = "Ko`proq o‘qish";
+      }
+    }
+  </script>
+
+</body>
+</html>
