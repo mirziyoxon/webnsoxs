@@ -5,9 +5,7 @@
   <title>NISO.UZ @ UCN</title>
   <style>
     /* ===== GLOBAL ===== */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -21,15 +19,9 @@
     }
 
     @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* ===== HEADER ===== */
@@ -45,10 +37,7 @@
       backdrop-filter: blur(6px);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
+    header h1 { margin: 0; font-size: 1.8em; }
 
     nav a {
       color: #fff;
@@ -58,27 +47,14 @@
       transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #ffd6d6;
-    }
+    nav a:hover { color: #ffd6d6; }
 
     /* ===== HERO ===== */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
+    .hero { text-align: center; padding: 80px 20px; }
 
-    .hero h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
+    .hero h2 { font-size: 2.5em; margin-bottom: 20px; }
 
-    .hero p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+    .hero p { font-size: 1.2em; max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
     /* ===== ARTICLES ===== */
     .article {
@@ -145,6 +121,45 @@
       background: rgba(0,0,0,0.4);
       font-size: 0.9em;
     }
+
+    /* ===== PROMO MODAL ===== */
+    #promoModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #promoModal.show { display: flex; opacity: 1; }
+
+    #promoModal img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    #promoModal .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    #promoModal .close:hover { color: red; }
+
   </style>
 </head>
 <body>
@@ -160,28 +175,16 @@
 
   <section class="hero">
     <h2>Ayollar salomatligi uchun ochiq kutubxona</h2>
-    <p>
-      Menstruatsiya, gormonlar, homiladorlik va boshqa mavzular haqida ochiq va ishonchli ma’lumot.
-      Ayollar tanasi haqidagi bilimni hammaga yaqinlashtiramiz.
-    </p>
+    <p>Menstruatsiya, gormonlar, homiladorlik va boshqa mavzular haqida ochiq va ishonchli ma’lumot. Ayollar tanasi haqidagi bilimni hammaga yaqinlashtiramiz.</p>
   </section>
+
   <section id="articles">
     <div class="article">
       <h2>Reproduktive Salomatlik nima?</h2>
       <p>Reproduktiv salomatlik — bu ayol organizmida sodir bo‘ladigan...</p>
       <div class="hidden">
-        <p>
-          Reproduktiv salomatlik — bu ayol organizmida sodir bo‘ladigan fiziologik jarayonlar majmuasini anglatadi.
-          U pubertat davridan boshlanib, menopauzagacha davom etadi va bu davr ichida gormonlar
-          muvozanati, hayz tsikli, homiladorlik, tug‘ruq, emizish va klimaks kabi bosqichlarni o‘z ichiga oladi.
-
-Hayz — bu tananing “beshinchi belgisi”
-Tibbiyotda yurak urishi, nafas olish, qon bosimi va tana harorati sog‘liqning asosiy belgisi sifatida olinadi.
-
-Ayollar bachadoni — immunitet bilan bog‘langan tizimdir, ya’ni yallig‘lanishlarga, viruslarga va stressga organizm qanday javob berishini tartibga solishda ishtirok etadi.
-
-Menopauza — bu davrda organizm yangicha ritmga o‘tadi.
-– To‘g‘ri ovqatlanish, gormonal terapiya va ruhiy yordam bilan bu bosqich sifatli va faollik bilan o‘tishi mumkin.
+        <p>Reproduktiv salomatlik — bu ayol organizmida sodir bo‘ladigan fiziologik jarayonlar majmuasini anglatadi.
+           U pubertat davridan boshlanib, menopauzagacha davom etadi va bu davr ichida gormonlar muvozanati, hayz tsikli, homiladorlik, tug‘ruq, emizish va klimaks kabi bosqichlarni o‘z ichiga oladi.
         </p>
       </div>
       <button onclick="toggleText(this)">Ko`proq o‘qish</button>
@@ -191,11 +194,7 @@ Menopauza — bu davrda organizm yangicha ritmga o‘tadi.
       <h2>Gormonal muvozanat</h2>
       <p>Gormonlar tananing asosiy boshqaruvchilari hisoblanadi...</p>
       <div class="hidden">
-        <p>
-          Gormonal muvozanat buzilganda uyqu, kayfiyat va salomatlikka
-          ta’sir qiladi. Uni to‘g‘ri tushunish va sog‘lom turmush tarzini
-          olib borish juda muhim.
-        </p>
+        <p>Gormonal muvozanat buzilganda uyqu, kayfiyat va salomatlikka ta’sir qiladi. Uni to‘g‘ri tushunish va sog‘lom turmush tarzini olib borish juda muhim.</p>
       </div>
       <button onclick="toggleText(this)">Ko`proq o‘qish</button>
     </div>
@@ -203,48 +202,22 @@ Menopauza — bu davrda organizm yangicha ritmga o‘tadi.
 
   <section id="about" class="about">
     <h2>Biz haqimizda</h2>
-    <p>
-      NISO.UZ – bu O‘zbekistondagi birinchi onlayn kutubxona bo‘lib, ayollar salomatligi
-      mavzularini ochiq va soddalashtirilgan tarzda tushuntirishni maqsad qiladi.
-      Biz ayollarni tanasi haqida ilmiy asoslangan, ishonchli va stigma’dan xoli
-      bilim bilan qurollantirishga ishonamiz.
-    </p>
+    <p>NISO.UZ – bu O‘zbekistondagi birinchi onlayn kutubxona bo‘lib, ayollar salomatligi mavzularini ochiq va soddalashtirilgan tarzda tushuntirishni maqsad qiladi. Biz ayollarni tanasi haqida ilmiy asoslangan, ishonchli va stigma’dan xoli bilim bilan qurollantirishga ishonamiz.</p>
   </section>
 
-
-
   <section id="team" class="about">
-  <h2>Jamoamiz</h2>
-  <p>Bizning NISO.UZ jamoasi ayollar salomatligini targ‘ib qilishga sodiq mutaxassislardan iborat:</p>
-  
-  <div class="team-members" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
-    
-    <div class="member" style="background: rgba(255,255,255,0.9); color:#111; padding: 20px; border-radius: 15px; max-width: 200px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
-      <img src="nsopics/member0.jpg" alt="Mushtariy Anvarova" style="width:120px; height:120px; border-radius:50%; object-fit: cover; margin-bottom: 10px;">
-      <h3>Mushtariy Anvarova</h3>
-      <p>Founder & Author</p>
-      <p><a href="https://t.me/nisouzz" target="_blank">Telegram</a></p>
+    <h2>Jamoamiz</h2>
+    <p>Bizning NISO.UZ jamoasi ayollar salomatligini targ‘ib qilishga sodiq mutaxassislardan iborat:</p>
+    <div class="team-members" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+      <div class="member" style="background: rgba(255,255,255,0.9); color:#111; padding: 20px; border-radius: 15px; max-width: 200px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
+        <img src="nsopics/member0.jpg" alt="Mushtariy Anvarova" style="width:120px; height:120px; border-radius:50%; object-fit: cover; margin-bottom: 10px;">
+        <h3>Mushtariy Anvarova</h3>
+        <p>Founder & Author</p>
+        <p><a href="https://t.me/nisouzz" target="_blank">Telegram</a></p>
+      </div>
     </div>
-    
-    <div class="member" style="background: rgba(255,255,255,0.9); color:#111; padding: 20px; border-radius: 15px; max-width: 200px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
-      <img src="pics/member2.jpg" alt="Member 2" style="width:120px; height:120px; border-radius:50%; object-fit: cover; margin-bottom: 10px;">
-      <h3>-</h3>
-      <p>Designer</p>
-      <p>-</p>
-    </div>
-    
-    <div class="member" style="background: rgba(255,255,255,0.9); color:#111; padding: 20px; border-radius: 15px; max-width: 200px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
-      <img src="pics/member3.jpg" alt="Member 3" style="width:120px; height:120px; border-radius:50%; object-fit: cover; margin-bottom: 10px;">
-      <h3>-</h3>
-      <p>Content Writer</p>
-      <p>-</p>
-    </div>
+  </section>
 
-  </div>
-</section>
-
-
-  
   <section id="contact" class="contact">
     <h2>Aloqa</h2>
     <p>Bizning Telegram kanalimiz: <a href="https://t.me/nisouzz" target="_blank">@nisouzz</a></p>
@@ -255,22 +228,40 @@ Menopauza — bu davrda organizm yangicha ritmga o‘tadi.
     © 2025 NISO.UZ – Ayollar uchun bilim va salomatlik kutubxonasi
   </footer>
 
+  <!-- PROMO MODAL -->
+  <div id="promoModal">
+    <span class="close">&times;</span>
+    <img src="ads/reklama0.jpg" alt="Promo Banner">
+  </div>
+
   <script>
-    function toggleText(btn) {
-      const hiddenText = btn.previousElementSibling;
-      hiddenText.classList.toggle("show");
-      if (hiddenText.classList.contains("show")) {
-        btn.textContent = "Yopish";
-      } else {
-        btn.textContent = "Ko`proq o‘qish";
-      }
+  function toggleText(btn) {
+    const hiddenText = btn.previousElementSibling;
+    hiddenText.classList.toggle("show");
+    btn.textContent = hiddenText.classList.contains("show") ? "Yopish" : "Ko`proq o‘qish";
+  }
+
+  // PROMO MODAL SCRIPT
+  window.addEventListener("load", () => {
+    const modal = document.getElementById("promoModal");
+    const closeBtn = modal.querySelector(".close");
+
+    function closeBanner() {
+      modal.classList.remove("show");
+      setTimeout(() => modal.style.display = "none", 300);
+      localStorage.setItem("bannerShownTime", Date.now());
     }
-  </script>
 
-</body>
-</html>
+    closeBtn.onclick = closeBanner;
 
+    const lastShown = localStorage.getItem("bannerShownTime");
+    const now = Date.now();
+    const oneDay = 24 * 60 * 60 * 1000; // 1 kun
 
-
-
-
+    // Agar oxirgi ko‘rsatish 1 kundan oldin bo‘lgan bo‘lsa yoki mavjud bo‘lmasa
+    if (!lastShown || now - lastShown > oneDay) {
+      modal.style.display = "flex";
+      setTimeout(() => modal.classList.add("show"), 50); // fade in
+    }
+  });
+</script>
